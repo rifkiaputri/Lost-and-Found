@@ -1,13 +1,22 @@
 /* GLOBAL CSS */
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
 
 body {
 	font-family: 'Roboto', sans-serif;
 }
 
+h1, h2 {
+	font-family: 'Roboto Condensed', sans-serif;	
+}
+
 .wrapper {
 	margin-top: 60px;
-	background:#e9eaed;
+	background: #e9eaed;
+}
+
+.container {
+	width: 100%;
 }
 
 .btn-primary {
@@ -256,7 +265,7 @@ body {
 	margin:0;
 	padding:10px 15px;
 	font-size:18px;
-	background:#0077ff;
+	background:#16a3e5;
 	color:#fff;
 }
 
@@ -277,91 +286,99 @@ body {
 
 /* BAGIAN PENJELASAN APLIKASI */
 .description {
-	float:left;
-	width:100%;
-	margin-top:30px;
-	background:#dedede;
-	padding:30px;
+	float: left;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	background: #dedede;
+	padding: 30px;
 }
 
 .description h2 {
-	margin-top:0;
+	margin-top: 0;
 }
 
 .center-img {
-	text-align:center;
-	padding:10px;
+	text-align: center;
+	padding: 10px;
 }
 
 .description .center-img img {
-	height:240px;
-	width:240px;
+	height: 240px;
+	width: 240px;
+	padding: 15px;
 }
 
 .dstep {
-	margin-left:20px;
-	text-align:justify;
+	margin-left: 33px;
+	text-align: justify;
 }
 
 /* BAGIAN PENJELASAN FITUR */
 .features {
-	float:left;
-	width:100%;
-	background:#0077FF;
-	color:#fff;
-	padding:30px;
+	float: left;
+	width: 100%;
+	background: #16a3e5;
+	color: #fff;
+	padding: 30px;
+	margin-bottom: 15px;
 }
 
 .features-desc {
-	padding-top:60px;
+	padding-top: 60px;
 }
 
 .features-desc img {
-	width:100px;
+	width: 60px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 .features-desc p {
-	font-size:20px;
+	font-size: 20px;
+	font-weight: 300;
+	padding-bottom: 10px;
 }
 
 /* BAGIAN DOWNLOAD ANDROID */
 .mobile-download {
-	float:left;
-	width:100%;
-	background:#dedede;
-	padding:30px;
-	padding-bottom:50px;
+	float: left;
+	width: 100%;
+	background: #dedede;
+	padding: 30px;
+	padding-bottom: 50px;
 }
 
 /* BAGIAN MAPS PELACAKAN */
 .panel-maps {
-	height:400px;
+	height: 400px;
 }
 
 .mytable {
-	width:400px;
+	width: 400px;
 }
 
 .mytable td {
-	padding:5px;
-	vertical-align:middle;
+	padding: 5px;
+	vertical-align: middle;
 }
 
 #map-canvas { height: 100%; margin: 0; padding: 0;}
 
 /* FOOTER */
 .footer {
-	clear:both;
-	padding:10px;
-	background:#222;
-	color:#fff;
+	clear: both;
+	padding: 10px;
+	background: #222;
+	color: #fff;
 	/*position:fixed;
 	bottom:0px;
 	width:100%;*/
 }
 
 .footer p {
-	margin:0;
-	padding:5px;
-	display:inline-block;
+	margin: 0;
+	padding: 5px;
+	display: inline-block;
 }
