@@ -1,0 +1,367 @@
+/* GLOBAL CSS */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+	margin-top: 60px;
+	background:#e9eaed;
+}
+
+.btn-primary {
+	background-color: #16a3e5;
+	border-color: #028ecf;
+}
+
+.btn-primary:hover {
+	background-color: #0283c0;
+	border-color: #028ecf;
+}
+
+#scroller {
+    position: fixed;   
+    bottom: 60px;  
+	right: 20px;
+    background: transparent url(../img/btn-scroll.png) no-repeat left top; 
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    display:none;
+	opacity: 0.6;
+}
+
+#scroller:hover {
+	opacity:1;
+}
+
+/* BAGIAN JUMBOTRON */
+#jumbotron1 {
+	background-image: url('../img/background.png');
+	background-position: center bottom;
+}
+
+#jumbotron2 {
+	background: #373b3c;
+	color: #fff;
+}
+
+#jumbotron3 {
+	background: #ddd;
+}
+
+/* BAGIAN MENU DI KAMAN */
+.menu-tab {
+	border: 1px #ddd solid;
+	padding:0px;
+}
+
+.menu-tab p {
+	display: inline-block;
+	padding: 20px;
+	margin: 0px;
+	width:50%;
+	text-align:center;
+	font-size:16pt;
+}
+
+.menu-tab p.menu-tab-lost:hover {
+	cursor:pointer;
+	background-image: url('../img/lost-border.png');
+	background-repeat: repeat-x;
+}
+
+.menu-tab p.menu-tab-found:hover {
+	cursor:pointer;
+	background-image: url('../img/found-border.png');
+	background-repeat: repeat-x;
+}
+
+.menu-tab .active {
+	background:#00bfff;
+	color:#fff;
+}
+
+/* BAGIAN PANEL UTAMA */
+.timeline {
+	padding-bottom: 10px;
+}
+
+.panel-heading {
+	padding-left:24px;
+}
+
+.panel-heading h2 {
+	margin-top:5px;
+	margin-bottom:2px;
+}
+
+.panel-heading a {
+	text-decoration:none;
+	color:#31708f;
+}
+
+.panel-heading p {
+	margin-bottom:0;
+}
+
+.panel-body {
+	padding-left:24px;
+}
+
+.post{
+	margin:10px;
+	padding:10px 20px 10px 20px;
+	border: 1px #ddd solid;
+	border-radius:5px;
+}
+
+.post-img {
+	text-align:center;
+}
+
+.post-img img {
+	max-height:300px;
+	width:auto;
+}
+
+.title-post {
+	margin:10px 0px 10px 0px;
+	font-family: sans-serif;
+	font-size: 16pt;
+}
+
+.form-writepost p {
+	padding-top:5px;
+	padding-bottom:5px;
+	margin:0;
+}
+
+.form-writepost input, .form-writepost textarea {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.form-writepost input[type="file"] {
+	display:inline !important;
+	margin-left:10px;
+}
+
+.post-options input {
+	margin:0 10px 0 10px;
+	vertical-align:middle;
+}
+
+.post-icon {
+	font-size:20px;
+}
+
+.post-icon .glyphicon {
+	margin-left:10px;
+}
+
+#foto{
+	position: relative;
+	width: 192px;
+	height: 192px;
+	overflow: hidden;
+}
+
+#foto img, .comment-photo img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 100%;
+	width: auto;
+	-webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.to-left {
+	float:left;
+}
+
+.to-right {
+	float:right;
+}
+
+/* BAGIAN KOMENTAR */
+.comment-photo {
+	position: relative;
+	width: 48px;
+	height: 48px;
+	overflow: hidden;
+}
+
+/* VERTICAL CAROUSEL SLIDER */
+.carousel-widget {
+	padding:10px 10px 10px 15px;
+}
+
+.carousel-widget h5 {
+	font-size:18px;
+	margin-bottom:2px;
+	margin-top:5px;
+}
+
+.vertical .carousel-inner {
+  min-height:130px;
+}
+
+.carousel-widget.vertical .item {
+  -webkit-transition: 0.6s ease-in-out top;
+     -moz-transition: 0.6s ease-in-out top;
+      -ms-transition: 0.6s ease-in-out top;
+       -o-transition: 0.6s ease-in-out top;
+          transition: 0.6s ease-in-out top;
+}
+
+.carousel-widget.vertical .active {
+  top: 0;
+}
+
+.carousel-widget.vertical .next {
+  top: 400px;
+}
+
+.carousel-widget.vertical .prev {
+  top: -400px;
+}
+
+.carousel-widget.vertical .next.left,
+.carousel-widget.vertical .prev.right {
+  top: 0;
+}
+
+.carousel-widget.vertical .active.left {
+  top: -400px;
+}
+
+.carousel-widget.vertical .active.right {
+  top: 400px;
+}
+
+.carousel-widget.vertical .item {
+    left: 0;
+}
+
+.widget-newlost, .widget-newfound {
+	border:1px solid #ccc;
+	box-shadow: 2px 2px 5px #888888;
+}
+
+.widget-newlost h2, .widget-newfound h2 {
+	margin:0;
+	padding:10px 15px;
+	font-size:18px;
+	background:#0077ff;
+	color:#fff;
+}
+
+.widget-newlost a, .widget-newfound a {
+	text-decoration:none;
+}
+
+.widget-footer {
+	float:right;
+	margin-top:-25px;
+	margin-right:5px;
+}
+
+.widget-footer a {
+	color:#333;
+	text-decoration:none;
+}
+
+/* BAGIAN PENJELASAN APLIKASI */
+.description {
+	float:left;
+	width:100%;
+	margin-top:30px;
+	background:#dedede;
+	padding:30px;
+}
+
+.description h2 {
+	margin-top:0;
+}
+
+.center-img {
+	text-align:center;
+	padding:10px;
+}
+
+.description .center-img img {
+	height:240px;
+	width:240px;
+}
+
+.dstep {
+	margin-left:20px;
+	text-align:justify;
+}
+
+/* BAGIAN PENJELASAN FITUR */
+.features {
+	float:left;
+	width:100%;
+	background:#0077FF;
+	color:#fff;
+	padding:30px;
+}
+
+.features-desc {
+	padding-top:60px;
+}
+
+.features-desc img {
+	width:100px;
+}
+
+.features-desc p {
+	font-size:20px;
+}
+
+/* BAGIAN DOWNLOAD ANDROID */
+.mobile-download {
+	float:left;
+	width:100%;
+	background:#dedede;
+	padding:30px;
+	padding-bottom:50px;
+}
+
+/* BAGIAN MAPS PELACAKAN */
+.panel-maps {
+	height:400px;
+}
+
+.mytable {
+	width:400px;
+}
+
+.mytable td {
+	padding:5px;
+	vertical-align:middle;
+}
+
+#map-canvas { height: 100%; margin: 0; padding: 0;}
+
+/* FOOTER */
+.footer {
+	clear:both;
+	padding:10px;
+	background:#222;
+	color:#fff;
+	/*position:fixed;
+	bottom:0px;
+	width:100%;*/
+}
+
+.footer p {
+	margin:0;
+	padding:5px;
+	display:inline-block;
+}
