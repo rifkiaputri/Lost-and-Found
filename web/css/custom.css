@@ -16,7 +16,7 @@ h1, h2 {
 }
 
 .container {
-	width: 100%;
+	width: 98%;
 }
 
 .btn-primary {
@@ -27,6 +27,10 @@ h1, h2 {
 .btn-primary:hover {
 	background-color: #0283c0;
 	border-color: #028ecf;
+}
+
+.right-align {
+  	text-align: right;
 }
 
 #scroller {
@@ -46,6 +50,11 @@ h1, h2 {
 }
 
 /* BAGIAN JUMBOTRON */
+.carousel-inner {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
 #jumbotron1 {
 	background-image: url('../img/background.png');
 	background-position: center bottom;
@@ -288,7 +297,7 @@ h1, h2 {
 .description {
 	float: left;
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 15px;
 	margin-bottom: 15px;
 	background: #dedede;
 	padding: 30px;
@@ -348,6 +357,22 @@ h1, h2 {
 	background: #dedede;
 	padding: 30px;
 	padding-bottom: 50px;
+}
+
+/* TIMELINE MENU */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  	color: #fff;
+  	background-color: #16a3e5;
+}
+
+#right-menu {
+	color: #484848;
+}
+
+#icon-menu {
+	margin-right: 5px;
 }
 
 /* BAGIAN MAPS PELACAKAN */

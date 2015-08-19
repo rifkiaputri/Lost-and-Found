@@ -28,6 +28,9 @@ class AppAsset extends AssetBundle
         'js/main.js',
         'js/widget-newposts.js'
     ];
+    public $jsOptions = [
+        'position' => \yii\web\View::POS_HEAD
+    ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',

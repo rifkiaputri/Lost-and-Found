@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Post;
 
 class SiteController extends Controller
 {
@@ -49,7 +50,19 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        if (Yii::$app->user->isGuest) {
+            $model = new Post();
+            $query = $model::find()->all();
+            return $this->render('index', [
+                'posts' => $query,
+            ]);
+        } else {
+            $model = new Post();
+            $query = $model::find()->all();
+            return $this->render('timeline', [
+                'posts' => $query,
+            ]);
+        }
     }
 
     public function actionLogin()

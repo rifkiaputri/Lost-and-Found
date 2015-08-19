@@ -22,7 +22,7 @@ var posts = [];
 var user = [];
 function getPosts(type){
 	$.ajax({
-	  url: "api/posts.php",
+	  url: "../controllers/PostController.php",
 	  type: "GET",
 	  data: { post_type: type },
 	  beforeSend: function(){

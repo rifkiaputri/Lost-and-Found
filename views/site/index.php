@@ -33,6 +33,7 @@ $this->title = 'Lost and Found';
         </div>
     </div>
     <!-- Container -->
+    <!--
     <div class="container">
         <div class="col-md-6">
           <div class="widget-newlost">
@@ -59,6 +60,7 @@ $this->title = 'Lost and Found';
           </div>
         </div>
     </div>
+    -->
     <div class="description">
         <div class="col-md-10 col-md-offset-1">
             <h2>Apa itu Lost and Found?</h2>
@@ -112,10 +114,28 @@ $this->title = 'Lost and Found';
             <h2>Download for Android</h2>
             <p style="text-align:justify;">Selain pada platform Web, aplikasi Lost and Found juga tersedia pada platform Mobile. Unduh aplikasinya pada 
             Google Play atau klik tombol download di bawah ini.</p><br>
-            <center><a href="download-android.php"><img src="img/btn-download-android.png"></a></center>
+            <center><a href="#"><img src="img/btn-download-android.png"></a></center>
             <br><br>
             <p>*info: saat ini, aplikasi dalam platform Android masih dalam tahap pengembangan dan belum bisa diunduh.</p>
         </div>
     </div>
     
 </div>
+
+<script>
+    $('.carousel').carousel({pause: "false"});
+    $('.carousel-widget').carousel({pause: "false"});
+    $(document).ready(function(){
+        getNewPosts(1,"#newlost");
+        getNewPosts(2,"#newfound");
+    });
+    $("#toDesc").click(function() {
+        $('html, body').animate({ scrollTop: $(".description").offset().top-60 }, 1000);
+    });
+    $("#toFeatures").click(function() {
+        $('html, body').animate({ scrollTop: $(".features").offset().top-60 }, 1000);
+    });
+    $("#toMobile").click(function() {
+        $('html, body').animate({ scrollTop: $(".mobile-download").offset().top-60 }, 1000);
+    });
+</script>
