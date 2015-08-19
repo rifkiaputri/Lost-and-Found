@@ -5,7 +5,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = 'Beranda';
+$this->title = 'Tulisan Saya';
 ?>
 <div class="site-timeline">
 	<div class="row">
@@ -64,8 +64,8 @@ $this->title = 'Beranda';
 	    </div>
 	    <div class="col-xs-6 col-lg-4">
 	    	<ul class="nav nav-pills nav-stacked" role="tablist">
-				<li role="presentation" class="dropdown active">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				<li role="presentation">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="right-menu">
 						<span class="glyphicon glyphicon-home" id="icon-menu"></span> Beranda <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu" role="menu">
@@ -77,7 +77,7 @@ $this->title = 'Beranda';
 				<li role="presentation"><a id="right-menu" href="index.php?r=site%2Fprofile"><span class="glyphicon glyphicon-user" id="icon-menu"></span> Profil</a></li>
 				<li role="presentation"><a id="right-menu" href="message.php"><span class="glyphicon glyphicon-envelope" id="icon-menu"></span> Pesan <span class="badge">0</span></a></li>
 				<li role="presentation"><a id="right-menu" href="index.php?r=post%2Fcreate"><span class="glyphicon glyphicon-pencil" id="icon-menu"></span> Tambah Tulisan Baru</a></li>
-				<li role="presentation"><a id="right-menu" href="index.php?r=site%2Fmypost"><span class="glyphicon glyphicon-file" id="icon-menu"></span> Tulisan Saya</a></li>
+				<li role="presentation" class="dropdown active"><a href="#"><span class="glyphicon glyphicon-file" id="icon-menu"></span> Tulisan Saya</a></li>
 			</ul> 
 	    </div>
 	</div>

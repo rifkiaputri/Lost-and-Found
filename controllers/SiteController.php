@@ -56,22 +56,22 @@ class SiteController extends Controller
             $model = new Post();
             $post_type = Yii::$app->request->get('post_type');
             if ($post_type == 0) {
-                $query = $model::find()->all();
+                $query = $model::find()->orderBy('tanggal desc')->all();
                 return $this->render('timeline', [
                     'posts' => $query,
                 ]);
             } else if ($post_type == 1) { // lost
-                $query = $model::find()->where(['tipe' => 0])->all();
+                $query = $model::find()->where(['tipe' => 0])->orderBy('tanggal desc')->all();
                 return $this->render('timeline', [
                     'posts' => $query,
                 ]);
             } else if ($post_type == 2) { // found
-                $query = $model::find()->where(['tipe' => 1])->all();
+                $query = $model::find()->where(['tipe' => 1])->orderBy('tanggal desc')->all();
                 return $this->render('timeline', [
                     'posts' => $query,
                 ]);
             } else {
-                $query = $model::find()->all();
+                $query = $model::find()->orderBy('tanggal desc')->all();
                 return $this->render('timeline', [
                     'posts' => $query,
                 ]);
@@ -118,4 +118,19 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionProfile()
+    {
+        return $this->render('profile');
+    }
+
+    public function actionMypost()
+    {
+        $model = new Post();
+        $query = $model::find()->where(['username' => Yii::$app->user->identity->username])->orderBy('tanggal desc')->all();
+        return $this->render('mypost', [
+            'posts' => $query,
+        ]);
+    }
+    
 }
