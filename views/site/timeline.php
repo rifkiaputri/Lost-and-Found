@@ -64,9 +64,9 @@ $this->title = 'Timeline';
 						<span class="glyphicon glyphicon-home" id="icon-menu"></span> Beranda <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu" role="menu">
-					<li role="presentation"><a id="right-menu" href="timeline.php?post_type=0">Semua tulisan</a></li>
-						<li role="presentation"><a id="right-menu" href="timeline.php?post_type=1">Lost</a></li>
-						<li role="presentation"><a id="right-menu" href="timeline.php?post_type=2">Found</a></li>
+					<li role="presentation"><a id="right-menu" href="index.php?post_type=0">Semua tulisan</a></li>
+						<li role="presentation"><a id="right-menu" href="index.php?post_type=1">Lost</a></li>
+						<li role="presentation"><a id="right-menu" href="index.php?post_type=2">Found</a></li>
 					</ul>
 				</li>
 				<li role="presentation"><a id="right-menu" href="profile.php"><span class="glyphicon glyphicon-user" id="icon-menu"></span> Profil</a></li>

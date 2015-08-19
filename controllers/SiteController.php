@@ -51,17 +51,31 @@ class SiteController extends Controller
     public function actionIndex()
     {
         if (Yii::$app->user->isGuest) {
-            $model = new Post();
-            $query = $model::find()->all();
-            return $this->render('index', [
-                'posts' => $query,
-            ]);
+            return $this->render('index');
         } else {
             $model = new Post();
-            $query = $model::find()->all();
-            return $this->render('timeline', [
-                'posts' => $query,
-            ]);
+            $post_type = Yii::$app->request->get('post_type');
+            if ($post_type == 0) {
+                $query = $model::find()->all();
+                return $this->render('timeline', [
+                    'posts' => $query,
+                ]);
+            } else if ($post_type == 1) { // lost
+                $query = $model::find()->where(['tipe' => 0])->all();
+                return $this->render('timeline', [
+                    'posts' => $query,
+                ]);
+            } else if ($post_type == 2) { // found
+                $query = $model::find()->where(['tipe' => 1])->all();
+                return $this->render('timeline', [
+                    'posts' => $query,
+                ]);
+            } else {
+                $query = $model::find()->all();
+                return $this->render('timeline', [
+                    'posts' => $query,
+                ]);
+            }
         }
     }
 
