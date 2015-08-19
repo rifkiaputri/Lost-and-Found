@@ -11,11 +11,16 @@ $this->title = 'Tambah Tulisan Baru';
 <div class="post-create">
 	<div class="row">
 		<div class="col-xs-12 col-sm-6 col-lg-8">
-		    <h1><?= Html::encode($this->title) ?></h1>
-
-		    <?= $this->render('_form', [
-		        'model' => $model,
-		    ]) ?>
+			<div class="panel panel-default">
+			    <div class="panel-heading">
+			    	<h2><?= Html::encode($this->title) ?></h2>
+				</div>
+				<div class="panel-body">
+				    <?= $this->render('_form', [
+				        'model' => $model,
+				    ]) ?>
+				</div>
+			</div>
 		</div>
 		<div class="col-xs-6 col-lg-4">
 	    	<ul class="nav nav-pills nav-stacked" role="tablist">

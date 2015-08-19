@@ -9,8 +9,26 @@ $this->title = 'Profil';
 <div class="site-profile">
 	<div class="row">
 	    <div class="col-xs-12 col-sm-6 col-lg-8">
-	    	<h1>Profil</h1>
-	    	
+	    	<div class="panel panel-default">
+	    		<div class="panel-heading">
+	    			<h2>Profil</h2>
+	    		</div>
+	    		<div class="panel-body user-info">
+	    			<div class="row">
+                        <div class="col-xs-6 col-md-4">
+                            <span id="foto" style="float:left">
+                                <img src="images/default.jpg"></img>
+                            </span>
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                            <p></p><h4>Username:</h4>
+                            <h2 id="nama">@<?= Yii::$app->user->identity->username ?></h2>
+                            <h4><br>Email:</h4>
+                            <h2 id="user_profile"><?= Yii::$app->user->identity->email ?></h2>
+                        </div>
+                    </div>
+	    		</div>
+	    	</div>
 	    </div>
 	    <div class="col-xs-6 col-lg-4">
 	    	<ul class="nav nav-pills nav-stacked" role="tablist">

@@ -11,7 +11,7 @@ $this->title = 'Tulisan Saya';
 	<div class="row">
 	    <div class="col-xs-12 col-sm-6 col-lg-8">
 	    	<?php foreach ($posts as $post): ?>
-			<div class="panel panel-info">
+			<div class="panel panel-default">
 	            <div class="panel-heading">
 	                <a href="#">
 	                    <h2><?= $post->judul ?></h2>
