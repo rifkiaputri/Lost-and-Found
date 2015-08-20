@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'judul')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'username')->textInput(['maxlength' => true, 'value' => Yii::$app->user->identity->username]) ?>
+    <?= $form->field($model, 'username')->hiddenInput(['maxlength' => true, 'value' => Yii::$app->user->identity->username])->label(false) ?>
 
     <?= $form->field($model, 'konten')->textarea(['rows' => 6]) ?>
 

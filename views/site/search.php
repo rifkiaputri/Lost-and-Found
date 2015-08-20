@@ -60,7 +60,7 @@ $this->title = 'Hasil pencarian';
 			                            <a href="#" id="right-menu">
 			                                <span class="glyphicon glyphicon-envelope"></span>
 			                            </a>
-			                            <a href="#" id="right-menu">
+			                            <a href="index.php?r=site%2Fdetailpost&id=<?= $post->id?>" id="right-menu">
 			                                <span class="glyphicon glyphicon-comment"></span>
 			                            </a>
 			                        </div>

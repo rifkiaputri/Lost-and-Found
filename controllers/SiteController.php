@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Post;
+use app\models\Comments;
 
 class SiteController extends Controller
 {
@@ -143,11 +144,16 @@ class SiteController extends Controller
 
     public function actionDetailpost()
     {
-        $model = new Post();
+        $modelPost = new Post();
         $id = Yii::$app->request->get('id');
-        $query = $model::find()->where(['id' => $id])->one();
+        $queryPost = $modelPost::find()->where(['id' => $id])->one();
+
+        $modelComment = new Comments();
+        $queryComment = $modelComment::find()->where(['post_id' => $id])->orderBy('tanggal asc')->all();
+
         return $this->render('detailpost', [
-            'post' => $query,
+            'post' => $queryPost,
+            'comments' => $queryComment,
         ]);
     }
 
@@ -161,6 +167,18 @@ class SiteController extends Controller
             'posts' => $query,
             'id' => $searchparam,
         ]);
+    }
+
+    public function actionSavecomment()
+    {      
+        $model = new Comments();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $url = 'index.php?r=site/detailpost&id='. $model->post_id;
+            return $this->redirect($url);
+        } else {
+            return $this->redirect('index.php');
+        }
     }
 
     public function actionTrack()

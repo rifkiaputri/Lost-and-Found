@@ -23,7 +23,6 @@ class AppAsset extends AssetBundle
         'css/topbar.css',
     ];
     public $js = [
-        'js/ie10-viewport-bug-workaround.js',
         'js/jquery-1.11.1.min.js',
         'js/main.js',
         'js/widget-newposts.js',

@@ -4,6 +4,8 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use app\models\Comments;
+use yii\widgets\ActiveForm;
 
 if ($post->tipe == 0) {
 	$this->title = 'Lost: ' . $post->judul;
@@ -32,31 +34,36 @@ if ($post->tipe == 0) {
 	                <br><p><?= $post->konten ?></p>
                 </div>
                 <!--List of comments-->
+                <?php if ($comments != []) {
+                	foreach ($comments as $comment): ?>
+	                <div class="panel-footer">                    
+	                    <div class="row">
+	                        <div class="col-md-1">
+	                            <div class="comment-photo">
+	                                <img src="images/default.jpg"></img>
+	                            </div>
+	                        </div>
+	                        <div class="col-md-11">
+	                            <p><b><?= $comment->username ?></b> pada <?= $comment->tanggal ?></p>
+	                            <p><?= $comment->komentar ?></p>
+	                        </div>
+	                    </div>
+	                </div>
+                <?php endforeach; } 
+
+                $model = new Comments();
+                $form = ActiveForm::begin([
+			        'action' => ['savecomment'],
+			        'method' => 'post',
+			    ]);?>
+                
                 <div class="panel-footer">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <div class="comment-photo">
-                                <img src="images/titiankarir.jpg"></img>
-                            </div>
-                        </div>
-                        <div class="col-md-11">
-                            <p><b>aisyahdz</b> pada 2015-08-19 12:20:30</p>
-                            <p>up</p>
-                        </div>
-                    </div>
+                    <?= $form->field($model, 'username')->hiddenInput(['maxlength' => true, 'value' => Yii::$app->user->identity->username])->label(false) ?>
+			    	<?= $form->field($model, 'komentar')->textInput(['placeholder' => 'Tulis komentar...'])->label(false) ?>    
+                    <?= $form->field($model, 'post_id')->hiddenInput(['maxlength' => true, 'value' => $post->id])->label(false) ?>
                 </div>
-                <form action="postcomment.php" method="post">
-                    <input type="hidden" value=<?= Yii::$app->user->identity->username ?> name="username"></input>
-                    <input type="hidden" value=<?= $post->id ?> name="postid"></input>
-                    <div class="panel-footer">
-                        <div class="input-group input-group-sm">
-                            <input class="form-control" type="text" placeholder="Tulis komentar..." name="comment"></input>
-                            <span class="input-group-btn">
-                                <input class="btn btn-default" type="submit" value="Kirim"></input>
-                            </span>
-                        </div>
-                    </div>
-                </form>
+                
+                <?php ActiveForm::end(); ?>
             </div>
 	    </div>
 	    <div class="col-xs-6 col-lg-4">
