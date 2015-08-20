@@ -54,10 +54,10 @@ $this->title = 'Hasil pencarian';
 			                    </div>
 			                    <div class="col-md-6">
 			                        <div class="post-icon right-align">
-			                            <a href="#" id="right-menu">
+			                            <a href="index.php?r=site%2Ftrack" id="right-menu">
 			                                <span class="glyphicon glyphicon-screenshot"></span>
 			                            </a>
-			                            <a href="#" id="right-menu">
+			                            <a href="index.php?r=messages%2Fcreate&to=<?= $post->username?>" id="right-menu">
 			                                <span class="glyphicon glyphicon-envelope"></span>
 			                            </a>
 			                            <a href="index.php?r=site%2Fdetailpost&id=<?= $post->id?>" id="right-menu">

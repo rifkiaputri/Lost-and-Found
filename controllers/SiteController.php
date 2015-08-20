@@ -10,6 +10,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Post;
 use app\models\Comments;
+use app\models\Messages;
 
 class SiteController extends Controller
 {
@@ -127,10 +128,28 @@ class SiteController extends Controller
 
     public function actionMessage()
     {
+        $model = new Messages();
         $id = Yii::$app->request->get('id');
-        return $this->render('message', [
-            'id' => $id,
-        ]);
+
+        if ($id == 0) { // pesan masuk
+            $query = $model::find()->where(['ke' => Yii::$app->user->identity->username])->orderBy('tanggal desc')->all();
+            return $this->render('message', [
+                'messages' => $query,
+                'id' => $id,
+            ]);
+        } else if ($id == 1) { // pesan keluar
+            $query = $model::find()->where(['dari' => Yii::$app->user->identity->username])->orderBy('tanggal desc')->all();
+            return $this->render('message', [
+                'messages' => $query,
+                'id' => $id,
+            ]);
+        } else { // pesan masuk
+            $query = $model::find()->where(['ke' => Yii::$app->user->identity->username])->orderBy('tanggal desc')->all();
+            return $this->render('message', [
+                'messages' => $query,
+                'id' => $id,
+            ]);
+        }
     }
 
     public function actionMypost()
@@ -174,8 +193,7 @@ class SiteController extends Controller
         $model = new Comments();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $url = 'index.php?r=site/detailpost&id='. $model->post_id;
-            return $this->redirect($url);
+            return $this->redirect(['site/detailpost', 'id' => $model->post_id]);
         } else {
             return $this->redirect('index.php');
         }

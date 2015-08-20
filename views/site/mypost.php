@@ -49,12 +49,9 @@ $this->title = 'Tulisan Saya';
 		                    </div>
 		                    <div class="col-md-6">
 		                        <div class="post-icon right-align">
-		                            <a href="#" id="right-menu">
+		                            <a href="index.php?r=site%2Ftrack" id="right-menu">
 		                                <span class="glyphicon glyphicon-screenshot"></span>
-		                            </a>
-		                            <a href="#" id="right-menu">
-		                                <span class="glyphicon glyphicon-envelope"></span>
-		                            </a>
+		                            </a>		                          
 		                            <a href="index.php?r=site%2Fdetailpost&id=<?= $post->id?>" id="right-menu">
 		                                <span class="glyphicon glyphicon-comment"></span>
 		                            </a>
