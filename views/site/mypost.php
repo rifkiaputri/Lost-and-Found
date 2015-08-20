@@ -16,7 +16,7 @@ $this->title = 'Tulisan Saya';
 		    	foreach ($posts as $post): ?>
 				<div class="panel panel-default">
 		            <div class="panel-heading">
-		                <a href="#">
+		                <a href="index.php?r=site%2Fdetailpost&id=<?= $post->id?>">
 		                    <h2><?= $post->judul ?></h2>
 		                </a>
 		                <p>

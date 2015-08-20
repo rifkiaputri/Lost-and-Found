@@ -20,13 +20,15 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/custom.css',
-        'css/topbar.css'
+        'css/topbar.css',
     ];
     public $js = [
         'js/ie10-viewport-bug-workaround.js',
         'js/jquery-1.11.1.min.js',
         'js/main.js',
-        'js/widget-newposts.js'
+        'js/widget-newposts.js',
+        'js/tracking.js',
+        'https://maps.googleapis.com/maps/api/js?key=AIzaSyDWsMmpS4V1w_9rNfkHj6-sHCSwmCYjm7Q',
     ];
     public $jsOptions = [
         'position' => \yii\web\View::POS_HEAD

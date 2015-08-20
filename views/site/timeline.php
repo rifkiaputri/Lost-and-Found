@@ -13,7 +13,7 @@ $this->title = 'Beranda';
 	    	<?php foreach ($posts as $post): ?>
 			<div class="panel panel-default">
 	            <div class="panel-heading">
-	                <a href="#">
+	                <a href="index.php?r=site%2Fdetailpost&id=<?= $post->id?>">
 	                    <h2><?= $post->judul ?></h2>
 	                </a>
 	                <p>
@@ -46,7 +46,7 @@ $this->title = 'Beranda';
 	                    </div>
 	                    <div class="col-md-6">
 	                        <div class="post-icon right-align">
-	                            <a href="#" id="right-menu">
+	                            <a href="index.php?r=site%2Ftrack" id="right-menu">
 	                                <span class="glyphicon glyphicon-screenshot"></span>
 	                            </a>
 	                            <a href="#" id="right-menu">

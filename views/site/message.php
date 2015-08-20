@@ -13,14 +13,14 @@ $this->title = 'Pesan';
 	    		<div class="panel-body">
 					<ul class="nav nav-tabs" role="tablist">
 						<?php 
-						$t = Yii::$app->request->get('t');
-						if ($t == 0) { ?>
-							<li role="presentation" class="active"><a href="index.php?r=site%2Fmessage%26t=0">Pesan Masuk</a></li>
-							<li role="presentation"><a href="index.php?r=site%2Fmessage%26t=1">Pesan Keluar</a></li>
+						
+						if ($id == 0) { ?>
+							<li role="presentation" class="active"><a href="index.php?r=site%2Fmessage&id=0">Pesan Masuk</a></li>
+							<li role="presentation"><a href="index.php?r=site%2Fmessage&id=1">Pesan Keluar</a></li>
 						<?php
 						} else { ?>
-							<li role="presentation"><a href="index.php?r=site%2Fmessage%26t=0">Pesan Masuk</a></li>
-							<li role="presentation" class="active"><a href="index.php?r=site%2Fmessage%26t=1">Pesan Keluar</a></li>
+							<li role="presentation"><a href="index.php?r=site%2Fmessage&id=0">Pesan Masuk</a></li>
+							<li role="presentation" class="active"><a href="index.php?r=site%2Fmessage&id=1">Pesan Keluar</a></li>
 						<?php
 						}?>								
 					</ul>
@@ -40,7 +40,7 @@ $this->title = 'Pesan';
 								<div class="col-md-6 right-align"><a><span class="glyphicon glyphicon-share-alt right-align"></span> Reply</a></div>
 							</div>
 						</div>
-						<?php if($t==1){ ?>
+						<?php if($id==1){ ?>
 						<div class="panel-heading">
 							<h2>Kiki</h2>
 							<p><?php echo date('Y-m-d H:i:s', time()); ?></p>

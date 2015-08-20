@@ -126,7 +126,10 @@ class SiteController extends Controller
 
     public function actionMessage()
     {
-        return $this->render('message');
+        $id = Yii::$app->request->get('id');
+        return $this->render('message', [
+            'id' => $id,
+        ]);
     }
 
     public function actionMypost()
@@ -135,6 +138,16 @@ class SiteController extends Controller
         $query = $model::find()->where(['username' => Yii::$app->user->identity->username])->orderBy('tanggal desc')->all();
         return $this->render('mypost', [
             'posts' => $query,
+        ]);
+    }
+
+    public function actionDetailpost()
+    {
+        $model = new Post();
+        $id = Yii::$app->request->get('id');
+        $query = $model::find()->where(['id' => $id])->one();
+        return $this->render('detailpost', [
+            'post' => $query,
         ]);
     }
 
@@ -148,6 +161,11 @@ class SiteController extends Controller
             'posts' => $query,
             'id' => $searchparam,
         ]);
+    }
+
+    public function actionTrack()
+    {      
+        return $this->render('track');
     }
     
 }

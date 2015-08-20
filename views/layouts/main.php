@@ -9,7 +9,6 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\ActiveForm;
 use app\assets\AppAsset;
-//use app\models\PostSearch;
 
 AppAsset::register($this);
 ?>
@@ -52,21 +51,16 @@ AppAsset::register($this);
         'items' => $navItems,
     ]);
 
-    //$searchModel = new PostSearch();
-    //$this->render('searchform', ['model' => $searchModel]);
-
     $form = ActiveForm::begin([
         'action' => ['search'],
         'method' => 'get',
     ]);
 
-    echo '<div class="search-form">
-            
-                <input type="text" name="query" placeholder="Type here to search..." class="search-placeholder" required>
-                <span class="arrow">
-                    <input type="submit" value="   " class="search-button">
-                </span>
-            
+    echo '<div class="search-form">            
+            <input type="text" name="query" placeholder="Type here to search..." class="search-placeholder" required>
+            <span class="arrow">
+                <input type="submit" value="   " class="search-button">
+            </span>
         </div>';
 
     ActiveForm::end();
