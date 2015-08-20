@@ -15,15 +15,15 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <!--?= $form->field($model, 'id') ?-->
 
-    <?= $form->field($model, 'tipe') ?>
+    <!--?= $form->field($model, 'tipe') ?-->
 
-    <?= $form->field($model, 'judul') ?>
+    <?= $form->field($model, 'judul')->textInput()->label(false) ?>
 
-    <?= $form->field($model, 'username') ?>
+    <!--?= $form->field($model, 'username') ?-->
 
-    <?= $form->field($model, 'tanggal') ?>
+    <!--?= $form->field($model, 'tanggal') ?-->
 
     <?php // echo $form->field($model, 'konten') ?>
 

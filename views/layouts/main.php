@@ -7,7 +7,9 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\ActiveForm;
 use app\assets\AppAsset;
+//use app\models\PostSearch;
 
 AppAsset::register($this);
 ?>
@@ -34,12 +36,10 @@ AppAsset::register($this);
         ],
     ]);
     
-    $navItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-    ];
+    $navItems = [];
 
     if (Yii::$app->user->isGuest) {
-        array_push($navItems,['label' => 'Sign In', 'url' => ['/user/security/login']],['label' => 'Sign Up', 'url' => ['/user/registration/register']]);
+        array_push($navItems,['label' => 'Login', 'url' => ['/user/security/login']],['label' => 'Sign Up', 'url' => ['/user/registration/register']]);
     } else {
         array_push($navItems,['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
             'url' => ['/site/logout'],
@@ -52,14 +52,24 @@ AppAsset::register($this);
         'items' => $navItems,
     ]);
 
+    //$searchModel = new PostSearch();
+    //$this->render('searchform', ['model' => $searchModel]);
+
+    $form = ActiveForm::begin([
+        'action' => ['search'],
+        'method' => 'get',
+    ]);
+
     echo '<div class="search-form">
-            <form method="GET" action="search.php">
+            
                 <input type="text" name="query" placeholder="Type here to search..." class="search-placeholder" required>
                 <span class="arrow">
                     <input type="submit" value="   " class="search-button">
                 </span>
-            </form>
+            
         </div>';
+
+    ActiveForm::end();
     NavBar::end();
     ?>
 

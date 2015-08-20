@@ -124,12 +124,29 @@ class SiteController extends Controller
         return $this->render('profile');
     }
 
+    public function actionMessage()
+    {
+        return $this->render('message');
+    }
+
     public function actionMypost()
     {
         $model = new Post();
         $query = $model::find()->where(['username' => Yii::$app->user->identity->username])->orderBy('tanggal desc')->all();
         return $this->render('mypost', [
             'posts' => $query,
+        ]);
+    }
+
+    public function actionSearch()
+    {
+        
+        $model = new Post();
+        $searchparam = Yii::$app->request->get('query');
+        $query = $model::find()->where(['like', 'judul', $searchparam])->orderBy('tanggal desc')->all();
+        return $this->render('search', [
+            'posts' => $query,
+            'id' => $searchparam,
         ]);
     }
     

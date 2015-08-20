@@ -123,12 +123,6 @@ $this->title = 'Lost and Found';
 </div>
 
 <script>
-    $('.carousel').carousel({pause: "false"});
-    $('.carousel-widget').carousel({pause: "false"});
-    $(document).ready(function(){
-        getNewPosts(1,"#newlost");
-        getNewPosts(2,"#newfound");
-    });
     $("#toDesc").click(function() {
         $('html, body').animate({ scrollTop: $(".description").offset().top-60 }, 1000);
     });
