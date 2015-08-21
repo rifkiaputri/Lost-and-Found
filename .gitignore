@@ -25,8 +25,4 @@ composer.phar
 phpunit.phar
 # local phpunit config
 /phpunit.xml
-/config
-/assets
-"web.php" 
-"AppAsset.php" 
 "config/web.php" 
