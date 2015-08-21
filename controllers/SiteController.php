@@ -59,25 +59,12 @@ class SiteController extends Controller
             $post_type = Yii::$app->request->get('post_type');
             if ($post_type == 0) {
                 $query = $model::find()->orderBy('tanggal desc')->all();
-                return $this->render('timeline', [
-                    'posts' => $query,
-                ]);
-            } else if ($post_type == 1) { // lost
-                $query = $model::find()->where(['tipe' => 0])->orderBy('tanggal desc')->all();
-                return $this->render('timeline', [
-                    'posts' => $query,
-                ]);
-            } else if ($post_type == 2) { // found
-                $query = $model::find()->where(['tipe' => 1])->orderBy('tanggal desc')->all();
-                return $this->render('timeline', [
-                    'posts' => $query,
-                ]);
             } else {
-                $query = $model::find()->orderBy('tanggal desc')->all();
-                return $this->render('timeline', [
-                    'posts' => $query,
-                ]);
+                $query = $model::find()->where(['tipe' => $post_type-1])->orderBy('tanggal desc')->all();
             }
+            return $this->render('timeline', [
+                'posts' => $query,
+            ]);
         }
     }
 
