@@ -27,7 +27,6 @@ class AppAsset extends AssetBundle
         'js/main.js',
         'js/widget-newposts.js',
         'js/tracking.js',
-        'https://maps.googleapis.com/maps/api/js?key=AIzaSyC4mPk4KteWoevqdxgvwWjQQf447f91tyY',
     ];
     public $jsOptions = [
         'position' => \yii\web\View::POS_HEAD
